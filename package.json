@@ -4,16 +4,33 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
-  "author": "",
+  "author": "Sathit Seethaphon<dixonsatit@gmail.com>",
   "license": "MIT",
+  "build": {
+    "appId": "dixonsatit.watch-nhso-token",
+    "productName": "WatchNhsoToken",
+    "copyright": "Copyright © Sathit Seethaphon",
+    "mac": {
+      "category": "dixonsatit.app.his.utility"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  },
   "dependencies": {
     "menubar": "^9.0.1",
     "mqtt": "^4.2.1",
     "siimple": "^3.3.1"
   },
   "devDependencies": {
-    "electron": "^10.1.3"
+    "electron": "^10.1.3",
+    "electron-builder": "^22.9.1"
   }
 }
