@@ -9,9 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "log-timestamp": "^0.3.0",
-    "md5": "^2.3.0",
     "menubar": "^9.0.1",
     "mqtt": "^4.2.1",
     "siimple": "^3.3.1"
