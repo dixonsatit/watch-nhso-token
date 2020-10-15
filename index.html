@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>WATCH NHSO Token</title>
+    <link rel="stylesheet" href="css/siimple.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="siimple-content ">
+        <div class="siimple--px-5 ">
+            <div class="siimple-h4 siimple--text-normal siimple--mb-1" align="center">
+                WATCH NHSO TOKEN
+            </div>
+
+            <div class="siimple-tabs siimple-tabs--boxed">
+                <div id="tabWatchToken" onclick="onClickTab('tabWatchToken')" data-tab="tab-watch-token"
+                    class="siimple-tabs-item">
+                    Watch Token
+                </div>
+                <div id="tabSetting" onclick="onClickTab('tabSetting')" data-tab="tab-setting"
+                    class="siimple-tabs-item siimple-tabs-item--selected">Settings
+                </div>
+            </div>
+
+            <div class="tabcontents">
+                <div class="tabcontent" id="tab-watch-token">
+                    <div class="siimple-field">
+                        <label class="siimple-label">log message: </label><br>
+                        <textarea rows="8" id="txt-log" class="siimple-textarea siimple-textarea--fluid"></textarea>
+                    </div>
+                    <div class="siimple-field">
+                        <button id="btn-start"
+                            class="siimple-btn siimple-btn--default siimple-btn--fluid siimple--text-bold">
+                            Start watch file</button>
+                        <button style="display: none;" id="btn-stop"
+                            class="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold">
+                            Stop watch file</button>
+                    </div>
+                </div>
+
+                <div class="tabcontent" id="tab-setting">
+
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--8">
+                            <div class="siimple-field-label">Watch file name</div>
+                            <input id="watch-filename" type="text" class="siimple-input siimple-input--fluid"
+                                placeholder="C:/token.text">
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--4">
+                            <div class="siimple-field-label">&nbsp; </div>
+                            <button id="select-file" class="siimple-btn siimple-btn--grey">Shouse a token file</button>
+                        </div>
+                    </div>
+
+
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--6">
+
+                            <div class="siimple-field-label">MQTT Server</div>
+                            <input id="mqtt-server" type="text" class="siimple-input siimple-input--fluid"
+                                placeholder="192.168.1.1">
+
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--6">
+
+                            <div class="siimple-field-label">TopicName</div>
+                            <input id="mqtt-topic-name" type="text" class="siimple-input siimple-input--fluid"
+                                placeholder="/nsho/update-token">
+
+                        </div>
+                    </div>
+                    <div class="siimple-grid-row">
+                        <div class="siimple-grid-col siimple-grid-col--6">
+
+                            <div class="siimple-field-label">MQTT Username</div>
+                            <input id="mqtt-username" type="text" class="siimple-input siimple-input--fluid"
+                                placeholder="username">
+
+                        </div>
+                        <div class="siimple-grid-col siimple-grid-col--6">
+
+                            <div class="siimple-field-label">MQTT Password</div>
+                            <input id="mqtt-password" type="password" class="siimple-input siimple-input--fluid"
+                                placeholder="password">
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="siimple-field">
+                        <button id="btn-save-setting"
+                            class="siimple-btn siimple-btn--primary siimple-btn--fluid siimple--text-bold"> Save
+                            setting</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+
+</html>
