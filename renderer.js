@@ -4,7 +4,6 @@
 const fs = require('fs');
 const mqtt = require('mqtt')
 const { dialog } = require('electron').remote
-require('log-timestamp');
 
 var client = null;
 var watcher = null;
