@@ -10,7 +10,8 @@ https://github.com/dixonsatit/watch-nhso-token/releases/tag/v1.0.0
 
 ### การตั้งค่า
 ตั้งค่า mqtt server ที่ต้องการเชื่อมต่อ แล้วไปที่ tab watch token กด start
-
+!()[https://user-images.githubusercontent.com/1027274/96217101-208f8400-0fac-11eb-980f-9eba03b9f4f5.png]
+!()[https://user-images.githubusercontent.com/1027274/96217111-238a7480-0fac-11eb-8dc0-c5473cfdbee4.png]
 
 ### การ subscribe เพื่อใช้ข้อมูล
 
