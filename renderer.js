@@ -5,6 +5,7 @@ const fs = require('fs');
 const mqtt = require('mqtt')
 const { dialog } = require('electron').remote;
 const remote = require('electron').remote;
+var appVersion = remote.app.getVersion();
 
 var client = null;
 var watcher = null;
@@ -14,6 +15,13 @@ var mqttUsername = null;
 var mqttPassword = null;
 var mqttTopicName = null;
 var watchFileStatus = false;
+
+document.getElementById("app-version").innerHTML = 'WatchNhsoToken: Version: ' + appVersion;
+document.getElementById("app-version").addEventListener('click', (event) => {
+    event.preventDefault();
+    let link = event.target.href;
+    require("electron").shell.openExternal(link);
+});
 
 document.getElementById('btn-save-setting').addEventListener('click', () => {
     saveSetting();
