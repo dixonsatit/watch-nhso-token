@@ -3,7 +3,8 @@
 
 const fs = require('fs');
 const mqtt = require('mqtt')
-const { dialog } = require('electron').remote
+const { dialog } = require('electron').remote;
+const remote = require('electron').remote;
 
 var client = null;
 var watcher = null;
@@ -17,17 +18,22 @@ var watchFileStatus = false;
 document.getElementById('btn-save-setting').addEventListener('click', () => {
     saveSetting();
 });
+
 document.getElementById('btn-start').addEventListener('click', () => {
 
     document.getElementById('btn-start').style.display = 'none';
     document.getElementById('btn-stop').style.display = 'block';
     startWatchFile();
 });
-document.getElementById('btn-stop').addEventListener('click', () => {
 
+document.getElementById('btn-stop').addEventListener('click', () => {
     document.getElementById('btn-stop').style.display = 'none';
     document.getElementById('btn-start').style.display = 'block';
     stopWatchFile();
+});
+
+document.getElementById('btn-quit').addEventListener('click', () => {
+    remote.getCurrentWindow().close();
 });
 
 document.getElementById('select-file').addEventListener('click', function () {
