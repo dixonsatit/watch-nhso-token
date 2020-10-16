@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/dixonsatit/watch-nhso-token/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Watch nhso token เป็น application ที่เอาไว้ตรวจสอบการเปลี่ยนแปลง token ของสปสช. เพื่อใช้ในการตรวจสอบสิทธิ์ต่างๆ กรณีที่นำ token ไปใช้ที่อื่นๆ เช่น ตู้ kiosk  ถ้ามีการเปลี่ยนแปลงก็จะ publish ข้อมูล token ออกไป ปลายทางที่อยากได้ข้อมูลก็แค่ subscribe topic ที่ตั้งไว้ก็จะได้ข้อมูล token ใหม่ทุกครั้งที่มีการเปลี่ยนแปลง
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### การติดตั้ง
 
-```markdown
-Syntax highlighted code block
+สามารถดาวน์โหลดและติดตั้งใช้งานได้ทันที ทั้ง MAC, WINDOWS
 
-# Header 1
-## Header 2
-### Header 3
+### การตั้งค่า
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+### การ subscribe เพื่อใช้ข้อมูล
 
-**Bold** and _Italic_ and `Code` text
+การ subscribe สามารถทำได้ทุกๆ ภาษาที่มี lib MQTT Client ก็สามารถใช้ได้ ในที่นี้จะยกตัวอย่างเพียง JavaScript 
 
-[Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dixonsatit/watch-nhso-token/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+var mqtt = require('mqtt')
+var client  = mqtt.connect('mqtt://test.mosquitto.org')
+var topicName = 'xxx';
+ 
+client.on('connect', function () {
+  client.subscribe(topicName, functio(err) { })
+})
+ 
+client.on('message', function (topic, message) {
+    if(topic === topicName){
+         console.log(message.toString())
+    }
+ 
+  client.end()
+})
+```
