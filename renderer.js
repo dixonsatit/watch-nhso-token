@@ -121,8 +121,8 @@ function initTabs() {
 
 function readFile(path) {
     const file = fs.readFileSync(path);
-    const data = file.toString('utf8').split('\n');
-    if (data.length === 2) {
+    const data = file.toString('utf8').split('#');
+    if (data.length >= 2) {
         const log = 'Token update:' + data[0].split(0, data[1].length - 3) + '***' + ', ' + data[1].split(0, data[1].length - 3) + '***';
         console.log(log);
         document.getElementById("txt-log").value += '\n' + log;
